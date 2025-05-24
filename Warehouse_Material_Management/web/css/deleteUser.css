@@ -1,0 +1,50 @@
+.btn-move {
+  width: 60px;
+  height: 34px;
+  background-color: #ccc;
+  border-radius: 34px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.4s;
+  border: none;
+  outline: none;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+.btn-move.active {
+  background-color: #4CAF50; /* xanh tươi */
+  box-shadow: inset 0 0 10px rgba(76, 175, 80, 0.7);
+}
+
+.btn-move .dot {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-move.active .dot {
+  left: 28px;
+}
+
+/* Hover nhẹ */
+.btn-move:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+/* Disabled */
+.btn-move:disabled {
+  background-color: #eee;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-move:disabled .dot {
+  background-color: #ccc;
+  box-shadow: none;
+}
